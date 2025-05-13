@@ -1,4 +1,6 @@
+# Environnement virtuel
 venv/
-.env
 
+# Variables d'environnement
+.env
 .token
