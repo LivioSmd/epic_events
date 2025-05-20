@@ -65,7 +65,7 @@ def update_evenement(evenement_id, contrat_id=None, client_name=None, client_con
         evenement.support_id = support_id
     if location:
         evenement.location = location
-    if expected:
+    if expected is not None:
         evenement.expected = expected
     if notes:
         evenement.notes = notes

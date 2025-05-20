@@ -1,6 +1,7 @@
 import os
 import click
 import sentry_sdk
+from dotenv import load_dotenv
 from backend.auth_check import is_authenticated
 from backend.controllers.client_controller import get_all_clients_controller, create_client_controller, \
     get_client_controller, update_client_controller, delete_client_controller
@@ -13,6 +14,12 @@ from backend.controllers.user_controller import create_user_controller, get_all_
 from backend.repository.user_repository import authenticate_user
 from backend.utils import get_valid_name, get_valid_email, get_valid_password, get_valid_user_type, get_valid_int, \
     get_valid_string, get_valid_phone_number, get_valid_amount, get_valid_boolean
+
+# Load environment variables from .env file
+load_dotenv()
+DSN = os.getenv("DSN")
+if not DSN:
+    raise ValueError("DSN is not set in the .env file")
 
 # is_authenticated() verify if the user is connected and if so, it returns dict with the email, type and id of the user
 connected_user = is_authenticated()
@@ -722,11 +729,11 @@ def lackRightError():
 
 
 sentry_sdk.init(
-    dsn="https://88b52b0835d1cfac2387f90c31ea7a83@o4509312504430592.ingest.de.sentry.io/4509312512229456",
+    dsn=DSN,
     send_default_pii=True,
 )
 
 if __name__ == "__main__":
     # Uncomment the following line and run main to test the sentry error handling
-    # division_by_zero = 1 / 0
+    division_by_zero = 1 / 0
     cli()

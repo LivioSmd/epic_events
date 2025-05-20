@@ -57,9 +57,9 @@ def update_contrat(contrat_id, client_id=None, commercial_id=None, total_amount=
         contrat.client_id = client_id
     if commercial_id:
         contrat.commercial_id = commercial_id
-    if total_amount:
+    if total_amount is not None:
         contrat.total_amount = total_amount
-    if outstanding_amount:
+    if outstanding_amount is not None:
         contrat.outstanding_amount = outstanding_amount
     if signed:
         contrat.signed = signed

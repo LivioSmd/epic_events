@@ -1,5 +1,25 @@
-## Commands :
+## Installation & Launch
+1. Clone project
+   ```
+   git clone https://github.com/LivioSmd/epic_events.git
+   cd epic_events
+   ```
+2. Create virtual environment
+   ```
+   python3 -m venv venv
+   source venv/bin/activate  
+   ```
+3. install requirements
+   ```
+   pip install -r requirements.txt
+   ```
+4. Add a ```.env``` file at the root of the project that will contain :
+   ```
+   SECRET_KEY=your_secret_key #auth key
+   DSN="your_sentry_dsn" #Sentry Dsn
+   ```
 
+## Commands :
 ### Login / Logout / Me
 1. Login
     ```
@@ -129,3 +149,29 @@
     ``` 
     python -m frontend_click.cli delete-evenement <id>
     ```
+   
+## Tests
+1. Launch a test
+   ```
+   pytest -k «test_name»
+   ```
+   or
+   ```
+   PYTHONPATH=. pytest -k «test_name»
+   ```
+2. Launch tests
+   ```
+   pytest
+   ```
+   or
+   ```
+   PYTHONPATH=. pytest
+   ```
+3. Launch tests with coverage
+   ```
+   pytest --cov=.
+   ```
+   or
+   ```
+   PYTHONPATH=. pytest --cov=.
+   ```
