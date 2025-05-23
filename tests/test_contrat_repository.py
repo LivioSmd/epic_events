@@ -16,7 +16,7 @@ repo.SessionLocal = TestingSessionLocal
 
 @pytest.fixture(autouse=True)
 def setup_teardown():
-    """Réinitialise la base de données avant chaque test."""
+    """Reinitialize the database before each test."""
     session = TestingSessionLocal()
     Base.metadata.drop_all(bind=session.bind)
     Base.metadata.create_all(bind=session.bind)
@@ -25,7 +25,7 @@ def setup_teardown():
 
 
 def fake_contrat_data(**overrides):
-    """Retourne des données factices pour un contrat."""
+    """Returns fake contract data."""
     data = {
         "client_id": 1,
         "commercial_id": 2,

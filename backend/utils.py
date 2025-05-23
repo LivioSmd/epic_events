@@ -129,4 +129,3 @@ def get_valid_written_date(value):
         return value
     else:
         return {"error": "Le format de la date est invalide. Utilisez une date comme '6 mai 2025'."}
-

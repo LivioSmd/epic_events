@@ -20,7 +20,7 @@ repo.SessionLocal = TestingSessionLocal
 
 @pytest.fixture(autouse=True)
 def setup_teardown():
-    """Réinitialise la base avant chaque test."""
+    """Reinitialize the database before each test."""
     session = TestingSessionLocal()
     Base.metadata.drop_all(bind=session.bind)
     Base.metadata.create_all(bind=session.bind)
