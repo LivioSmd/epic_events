@@ -735,5 +735,5 @@ sentry_sdk.init(
 
 if __name__ == "__main__":
     # Uncomment the following line and run main to test the sentry error handling
-    division_by_zero = 1 / 0
+    # division_by_zero = 1 / 0
     cli()

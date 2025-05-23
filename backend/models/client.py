@@ -14,7 +14,7 @@ class Client(Base):
     email = Column(String(255), unique=True, nullable=False)
     phone_number = Column(String(20), nullable=False)
     company_name = Column(String(150), nullable=False)
-    user_contact_id = Column(Integer, ForeignKey("user.id"), nullable=False)  # # foreign key to User
+    user_contact_id = Column(Integer, ForeignKey("user.id"), nullable=False)  # foreign key to User
     # ORM relationship (allowing direct access to the User object
     # a field not stored in the database)
     user_contact = relationship("User")

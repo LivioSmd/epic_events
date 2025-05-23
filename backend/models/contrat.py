@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, Float, Date, ForeignKey
 from sqlalchemy.orm import relationship
 from .base_config import Base
-# from models.base_config import Base #for migration
+#from models.base_config import Base #for migration
 from datetime import date
 
 
