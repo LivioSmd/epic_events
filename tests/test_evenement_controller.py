@@ -83,7 +83,7 @@ def test_get_evenements_by_support_id():
     result = get_all_evenements_controller(support_id=2)
     assert isinstance(result, list)
     assert len(result) == 1
-    assert result[0].support_id == '2'
+    assert result[0].support_id == 2
 
 
 def test_get_evenements_with_support():
@@ -92,7 +92,7 @@ def test_get_evenements_with_support():
     result = get_all_evenements_controller(support=True)
     assert isinstance(result, list)
     assert len(result) == 1
-    assert result[0].support_id == '10'
+    assert result[0].support_id == 10
 
 
 def test_get_evenements_no_support():

@@ -69,7 +69,7 @@ def test_get_evenements_with_support():
     add_evenement(**fake_evenement_data(support_id=24))
     result = get_evenements(support=True)
     assert len(result) == 1
-    assert result[0].support_id == '24'
+    assert result[0].support_id == 24
 
 
 def test_get_evenements_by_support_id():
@@ -77,7 +77,7 @@ def test_get_evenements_by_support_id():
     add_evenement(**fake_evenement_data(support_id=2))
     result = get_evenements(support_id=2)
     assert len(result) == 1
-    assert result[0].support_id == '2'
+    assert result[0].support_id == 2
 
 
 def test_get_a_evenement():
@@ -91,7 +91,7 @@ def test_update_evenement():
     ev = add_evenement(**fake_evenement_data(client_name="Old Name", support_id=None))
     updated = update_evenement(ev.id, client_name="New Name", support_id=99)
     assert updated.client_name == "New Name"
-    assert updated.support_id == '99'
+    assert updated.support_id == 99
 
 
 def test_delete_evenement():
